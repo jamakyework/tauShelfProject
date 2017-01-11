@@ -1,7 +1,7 @@
 Full Stack with Auth Peer Project
 =================================
 
-![our shelf]()
+![our shelf](tauShelf.png)
 
 Technologies
 ------------
