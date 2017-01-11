@@ -9,7 +9,7 @@ Technologies
 * Express
 * Angular
 * Node
-* Auth0
+* Passport
 * git
 * github
 
