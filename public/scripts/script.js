@@ -47,3 +47,42 @@ myApp.controller('registerController',['$scope', '$http', '$window',
     });
   };
 }]);
+
+myApp.controller('HomeController',['$scope', '$http', '$window',
+  function($scope, $http, $window) {
+  console.log('inside AddItemController');
+
+  $scope.addItem = function() {
+    var itemToAdd = {
+      description: $scope.descriptionIn,
+      imageUrl: $scope.imageUrlIn
+    };
+console.log("itemToAdd:", itemToAdd);
+    $http({
+      method: 'POST',
+      url: '/addItem',
+      data: itemToAdd
+    }).then(function successCallback(response) {
+      console.log('success', response);
+      $window.location.reload();
+    }, function errorCallback(error) {
+      console.log('error occurred!');
+    });
+  };
+}]);
+
+
+
+
+myApp.controller("DisplayController", ["$scope", '$http', function($scope, $http) {
+    console.log("DisplayController..its working....");
+        $http({
+          method: 'GET',
+          url: '/getItem',
+        }).then(function successCallback(response) {
+          console.log(response);
+          $scope.shelf = response.data;
+        }, function errorCallback(error) {
+          console.log('error', error);
+        });
+}]);

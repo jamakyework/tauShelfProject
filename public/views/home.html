@@ -3,8 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>home</title>
+    <script src="./vendors/angular.min.js" charset="utf-8"></script>
+    <script src="./scripts/script.js" charset="utf-8"></script>
   </head>
-  <body>
-    home
+  <body ng-app="myApp">
+    <div ng-Controller="HomeController">
+    <h1> Add Item </h1>
+  Description: <input type="text" name="" value="" ng-model='descriptionIn'>
+  ImageUrl: <input type="text" name="" value="" ng-model='imageUrlIn'>
+  <button type="button" name="button" ng-click="addItem()">Add Item</button>
+    </div>
+    <div ng-controller="DisplayController">
+    <h1> Display Shelf</h1>
+    <p>Welcome to the Tau Class shelf </p>
+    <div ng-repeat= "item in shelf">
+      {{item.user}}
+      {{item.description}}
+     <img ng-src="{{item.imageUrl}}"/>
+   </div>
+   </div>
   </body>
 </html>

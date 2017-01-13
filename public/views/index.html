@@ -21,5 +21,15 @@
           <a href="/register">Register</a>
         </div>
       </form>
+      <div ng-controller="DisplayController">
+      <h1> Display Shelf</h1>
+      <p>Welcome to the Tau Class shelf </p>
+      <p>Please login to place items on the shelf.</p>
+      <div ng-repeat= "item in shelf">
+        {{item.user}}
+        {{item.description}}
+       <img ng-src="{{item.imageUrl}}"/>
+     </div>
+     </div>
   </body>
 </html>
